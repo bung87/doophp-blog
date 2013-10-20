@@ -1,0 +1,93 @@
+<!-- include 'header' -->
+<div id="container" class="c w">
+<div id="main">
+<article>
+	<header><h2><a href="{{url3('s',post.@post_date)}}">{{post.@post_title}}</a></h2><a href="javascript:;" class="btn_scale"></a></header>
+	<section>
+	<p class="att">{{lang('author')}}：{{authorname(post.@post_author)}} {{lang('category')}}:
+		<!-- loop relcategories -->
+		<a href="category/{{l' v.@slug}}">{{l' v.@name}}</a>
+		<!-- endloop -->  
+		{{lang('postedon')}}：<time>{{post.@post_date_gmt}}</time>
+	</p>
+
+	<a class="count" href="{{url3('s',post.@post_date)}}#comments">{{post.@comment_count}}</a>
+
+	</section>
+	<section id="content">{{stripslashes(post.@post_content)}}</section>
+	<!-- if (!empty({{reltags}})) -->
+	<section class="mt10">
+		<i>{{lang('tags')}}:</i>
+	<!-- loop reltags -->
+	<a href="{{urlx('t',l' v.@slug)}}">{{l' v.@name}}</a>
+	<!-- endloop -->
+	<section>
+	<!-- endif -->
+</article>
+<div class="c">
+<!-- Baidu Button BEGIN -->
+    <div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare">
+        <span class="bds_more">分享到：</span>
+        <a class="bds_tsina"></a>
+        <a class="bds_tqq"></a>
+        <a class="bds_renren"></a>
+        <a class="bds_douban"></a>
+        <a class="bds_diandian"></a>
+        <a class="bds_fbook"></a>
+        <a class="bds_twi"></a>
+        <a class="bds_ms"></a>
+        <a class="bds_linkedin"></a>
+        <a class="bds_deli"></a>
+        <a class="bds_mail"></a>
+        <a class="bds_print"></a>
+		<a class="shareCount"></a>
+    </div>
+
+<!-- Baidu Button END -->
+</div>
+<section id="comments" class="mt10">
+	<!-- if {{comments}} -->
+	<!-- loop comments -->
+	<dl data-commentID="{{l' v.@comment_ID}}" class="c mt5">
+		<dd class="l user">
+			<img class="avt" src="<!-- if {{l' v.@comment_author_avatar}} -->{{l' v.@comment_author_avatar}}<!-- else -->img/favicon_48.jpg<!-- endif -->" width="48" height="48" />
+			
+		</dd>
+	<dd><span><a href="{{l' v.@comment_author_url}}" target="_blank" rel="nofollow">{{l' v.@comment_author}}</a></span> {{l' v.@comment_date}}<a href="javascript:;" class="r reply">{{lang('reply')}}</a></dd>
+	<dd>{{l' v.@comment_content}}</dd>
+	</dl>
+	<!-- endloop -->
+	<!-- endif -->
+
+
+</section>
+
+<section id="commentbox" style="display:none;">
+<hgroup>
+<h3>{{lang('comment')}}</h3>
+<h4 class="mb10"><a href="javascript:;" id="applynotifier">(如有回复通知我)</a></h4>
+</hgroup>
+
+<form action="{{rootUrl}}comment" method="post" id="commentform" class="mt5">
+
+	<p class="mb5"><input type="text" name="author" id="author" value="" size="22" tabindex="1">
+	<label for="author"><small>昵称 (必填)</small></label></p>
+	<p class="mb5"><input type="email" name="email" id="email" value="" size="22" tabindex="2">
+	<label for="email"><small>邮箱 (不会公开) (必填)</small></label></p>
+	<p class="mb5"><input type="url" name="url" id="url" value="" size="22" tabindex="3">
+	<label for="url"><small>个人主页</small></label></p>
+
+<input type="hidden" name="formhidden" value="1">
+ <input type="hidden" name="comment_post_ID" value="{{post.@ID}}" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+<p><textarea name="comment" id="comment" cols="56" rows="10" tabindex="4"></textarea></p>
+<p><input class="btn" name="submit" type="submit" id="submit"  tabindex="5" value="{{lang('comment')}}">
+<input type="hidden" name="comment_post_ID" value="{{post.@ID}}">
+</p>
+</form>
+
+</section>
+
+</div><!-- end #main-->
+<!-- include 'side' -->
+<!-- include 'footer' -->

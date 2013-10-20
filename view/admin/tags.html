@@ -1,0 +1,60 @@
+<!-- include 'header' -->
+<script type="text/javascript" src="{{rootUrl}}js/xform.js"></script>
+<div class="c">
+
+    <form date-async="true" id="manage_tag" method="post" action="{{rootUrl}}admin/manage_tag">
+
+    <table class="mt10 table table-striped table-bordered table-condensed">
+    <thead><tr>
+            <th scope="col">名称</th>
+            <th scope="col">别名</th>
+            <th scope="col">描述</th>
+            <th scope="col">count</th>
+            <th scope="col"><a href="javascript:;" class="icon-plus-sign" style="padding:3px;margin: 5px;"></th>
+          </tr>
+    </thead>
+    <tbody>
+      <tr id="preload" style="display:none">
+      <td>
+        <input class="span2" type="text" name="name" value="" />
+      </td>
+      <td>
+         <input class="span2" type="text" name="slug" value="" />
+      </td>
+     <td>
+        <input class="input-xlarge" type="text" name="description" value="" />
+     </td>
+      <td>
+        <span class="span2 uneditable-input">count</span>
+      </td>
+      <td><button class="btn">添加</button></a></td>
+      </tr>
+      <!-- loop tags -->
+      <tr data-id="{{l' v.@term_taxonomy_id}}">
+      
+      <td class="input-append" data-name="name" data-value="category/{{l' v.@slug}}"><a href="{{l' v.@name}}" target="_blank">{{l' v.@name}}</a></td>
+      <td class="input-append" data-name="slug" data-value="{{l' v.@slug}}">{{l' v.@slug}}</td>
+     <td class="input-append" data-name="description" data-value="{{l' v.@description}}">{{l' v.@description}}</td>
+      <td>{{l' v.@count}}</td>
+      <td><a href="javascript:;" class="icon-remove" style="padding:3px;margin: 5px;"></a></td>
+      </tr>
+      <!-- endloop -->
+
+    </tbody>
+    </table>
+    </form>
+<nav id="pagenavi">
+    {{pager}}
+</nav>
+
+
+
+</div>
+<script type="text/javascript">
+var options={params:{insert:'add',update:'update','delete':'remove'},
+          tplid:'preload',
+          selecter:{add:'.icon-plus-sign',del:'.icon-remove',edit:'.icon-edit'}};
+$('#manage_category').xForm(options);
+</script>
+
+<!-- include 'footer' -->

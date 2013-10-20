@@ -1,0 +1,38 @@
+<!-- include 'header' -->
+
+<div id="container" class="c w">
+<div id="main">
+
+ <!-- loop posts -->
+<article>
+	<header><h2><a href="{{url3('s',posts' value.@post_date)}}">{{posts' value.@post_title}}</a></h2></header>
+	<section>
+	<p class="att">{{lang('author')}}：{{authorname(posts' value.@post_author)}} {{lang('category')}}:<a href="category/{{posts' value.@cateslug}}">{{posts' value.@catename}}</a> {{lang('postedon')}}：<time>{{posts' value.@post_date_gmt}}</time>
+	</p>
+	<div>
+	<!-- if !empty({{posts' value.@post_excerpt}}) -->
+	<p>{{posts' value.@post_excerpt}}</p>
+	<!-- else -->
+	<p>{{cutstr(posts' value.@post_content,300)}}</p>
+	<!-- endif -->
+	
+	</div>
+	<!-- if (empty({{posts' value.@comment_count}})) -->
+	<a class="count" href="{{url3('s',posts' value.@post_date)}}#comments">{{lang('nocomment')}}</a>
+	<!-- else -->
+	<a class="count" href="{{url3('s',posts' value.@post_date)}}#comments">{{lang('comment')}}({{posts' value.@comment_count}})</a>
+	<!-- endif -->
+	</section>
+</article>	 
+ <!-- endloop -->
+
+<nav id="pagenavi">
+	{{pager}}
+</nav>
+
+</div><!-- end #main-->
+
+<!-- include 'side' -->
+
+
+<!-- include 'footer' -->

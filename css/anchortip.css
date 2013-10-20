@@ -1,0 +1,8 @@
+#entry a{position:relative}
+#entry a span{text-decoration:none;display:none;position:absolute;white-space:nowrap;font-weight:normal;
+					font-size:11px;padding: 5px;top:20px;left:75%;
+background: #f4f4f4;background: rgba(244, 244, 244, 0.9);border:#cdcdcd 1px solid;
+-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
+-moz-box-shadow:1px 1px 2px #999;-webkit-box-shadow:1px 1px 2px #999;box-shadow:1px 1px 2px #999;
+}
+#entry a:hover span{;display:block;}

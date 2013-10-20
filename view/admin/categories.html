@@ -1,0 +1,52 @@
+<!-- include 'header' -->
+<script type="text/javascript" src="{{rootUrl}}js/xform.js"></script>
+<div class="c">
+    <h1>管理默认分类</h1>
+    <form date-async="true" id="manage_category" method="post" action="{{rootUrl}}admin/manage_category">
+
+    <table class="mt10 table table-striped table-bordered table-condensed">
+    <thead><tr>
+            <th scope="col">名称</th>
+            <th scope="col">别名</th>
+           
+            <th scope="col"><a href="javascript:;" class="icon-plus-sign" style="padding:3px;margin: 5px;"></th>
+          </tr>
+    </thead>
+    <tbody>
+      <tr id="preload" style="display:none">
+      <td>
+        <input class="span2" type="text" name="name" value="" />
+      </td>
+      <td>
+         <input class="span2" type="text" name="slug" value="" />
+      </td>
+
+      <td><button class="btn">添加</button></a></td>
+      </tr>
+      <!-- loop categories -->
+      <tr data-id="{{l' v.@term_id}}">
+      
+      <td class="input-append" data-name="name" data-value="{{l' v.@slug}}"><a href="./category/{{l' v.@slug}}" target="_blank">{{l' v.@name}}</a></td>
+      <td class="input-append" data-name="slug" data-value="{{l' v.@slug}}">{{l' v.@slug}}</td>
+      <td><a href="javascript:;" class="icon-remove" style="padding:3px;margin: 5px;"></a></td>
+      </tr>
+      <!-- endloop -->
+
+    </tbody>
+    </table>
+    </form>
+<nav id="pagenavi">
+    {{pager}}
+</nav>
+
+
+
+</div>
+<script type="text/javascript">
+var options={params:{insert:'add',update:'update','delete':'remove'},
+          tplid:'preload',
+          selecter:{add:'.icon-plus-sign',del:'.icon-remove',edit:'.icon-edit'}};
+$('#manage_category').xForm(options);
+</script>
+
+<!-- include 'footer' -->

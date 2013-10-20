@@ -1,0 +1,52 @@
+
+<aside id="sidebar" class="br">
+<ul>
+<li>
+<h3><span>{{lang('category')}}</span></h3>
+<ul>
+	
+<!-- loop categories -->
+
+<li><a href="{{rootUrl}}category/{{l' v.slug}}">{{l' v.name}}</a>	<a class="catfeed" href="rss/{{l' v.slug}}" title="{{lang('subscibe')}}{{l' v.slug}}">{{lang('subscibe')}}</a></li>
+
+<!-- endloop -->
+</ul></li>
+
+<li>
+<h3><span>{{lang('archives')}}</span></h3>
+<ul>
+<!-- loop archives -->
+
+<li><a rel='archives' href="{{rootUrl}}a/{{l' v.year}}/{{l' v.month}}">{{l' v.year}}-{{l' v.month}}</a>  <i>{{l' v.posts}} posts</i></li>
+
+<!-- endloop -->
+</ul></li>
+
+<li>
+<!--h3><span>{{lang('links')}}</span></h3-->
+<ul>
+<!-- loop links -->
+<li><a href="{{l' v.@link_url}}">{{l' v.@link_name}}</a></li>
+<!-- endloop -->
+</ul></li>
+
+<li>
+	
+
+<h3><span>{{lang('tags')}}</span></h3>
+<div id="tags">
+<ul class="tags">
+<!-- loop tags -->
+<li><a rel="tag" class="button" href="{{rootUrl}}tag/{{l' v.slug}}">{{l' v.name}}</a></li>
+<!-- endloop -->
+</ul>
+</div>
+  <div id="tagCloudcontainer">
+      <canvas width="200" height="200" id="tagCloud">
+        <p>Anything in here will be replaced on browsers that support the canvas element</p>
+      </canvas>
+    </div>
+</li>
+
+</ul>
+</aside>

@@ -1,0 +1,35 @@
+<!-- include 'header' -->
+
+<div id="container" class="c w">
+<div id="main">
+<!-- if {{count}} -->
+<!-- loop posts -->
+<article>
+	<header><h2><a href="{{url3('d',posts' value.@post_date)}}">{{posts' value.@post_title}}</a></h2></header>
+	<section>
+	<p class="att">作者：{{authorname(posts' value.@post_author)}} 发布于：<time>{{posts' value.@post_date_gmt}}</time>
+	</p>
+	<!-- if !empty({{posts' value.@post_excerpt}}) -->
+	{{posts' value.@post_excerpt}}
+	<!-- else -->
+	{{cutstr(posts' value.@post_content,300)}}
+	<!-- endif -->
+	<!-- if (empty({{posts' value.@comment_count}})) -->
+	<a class="count" href="{{url3('d',posts' value.@post_date)}}#comments">还没有评论</a>
+	<!-- else -->
+	<a class="count" href="{{url3('d',posts' value.@post_date)}}#comments">评论({{posts' value.@comment_count}})</a>
+	<!-- endif -->
+	</p>
+	</section>
+</article>	 
+<!-- endloop -->
+<!-- else -->
+ 还没有日记哦:)
+<!-- endif -->
+<nav id="pagenavi">
+	{{pager}}
+</nav>
+
+</div><!-- end #main-->
+<!-- include 'side' -->
+<!-- include 'footer' -->

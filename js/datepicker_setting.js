@@ -1,0 +1,19 @@
+$.datepicker.regional['zh-CN'] = 
+            { 
+                clearText: '清除', clearStatus: '清除已选日期', 
+                closeText: '关闭', closeStatus: '不改变当前选择', 
+                prevText: '&lt;上月', prevStatus: '显示上月', 
+                nextText: '下月&gt;', nextStatus: '显示下月', 
+                currentText: '今天', currentStatus: '显示本月', 
+               monthNames:['1 月','2 月','3 月','4 月','5 月','6 月','7 月','8 月','9 月','10 月','11 月','12 月'], 
+        monthNamesShort:['1 月','2 月','3 月','4 月','5 月','6 月','7 月','8 月','9 月','10 月','11 月','12 月'],
+                monthStatus: '选择月份', yearStatus: '选择年份', 
+                weekHeader: '周', weekStatus: '年内周次', 
+                dayNames: ['星期日','星期一','星期二','星期三','星期四','星期五','星期六'], 
+                dayNamesShort: ['周日','周一','周二','周三','周四','周五','周六'], 
+                dayNamesMin: [' 日','一','二','三','四','五','六'], 
+                dayStatus: '设置DD         为一周起始', dateStatus: '选择m 月d  日, DD', 
+                dateFormat: 'yy-mm-dd', firstDay: 1, 
+                initStatus: '请选择日期', isRTL: false 
+            }; 
+         $.datepicker.setDefaults($.datepicker.regional['zh-CN']); 

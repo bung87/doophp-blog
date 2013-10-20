@@ -1,0 +1,52 @@
+#toolbar [data-wysihtml5-action] {    float: right;  }
+  
+  #toolbar,  textarea {
+    width: 100%;
+    padding: 5px;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  
+  textarea {
+    height: 280px;
+  }
+  
+  textarea:focus {
+    color: black;
+    border: 1px solid #ddd;
+  }
+  
+  .wysihtml5-command-active {
+    font-weight: bold;
+  }
+  
+  [data-wysihtml5-dialog] {
+    margin: 5px 0 0;
+    padding: 5px;
+    border: 1px solid #666;
+  }
+  
+  a[data-wysihtml5-command-value="red"] {
+    color: red;
+  }
+  
+  a[data-wysihtml5-command-value="green"] {
+    color: green;
+  }
+  
+  a[data-wysihtml5-command-value="blue"] {
+    color: blue;
+  }
+  /* extension below*/
+  #toolbar #changeview {   border-bottom-left-radius: initial;
+					border-bottom-right-radius: initial;
+					position: relative;
+					bottom: -3px;
+					border-bottom: transparent;
+					font-size: 0.75em;
+					background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#F2F2F2), to(#fff));border-radius:3px;
+height:1.6em;line-height:1.6em;
+}
+   #toolbar a{font-family:microsoft yahei}
